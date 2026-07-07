@@ -79,12 +79,11 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
 }
-.input_fi{
-    display: flex;
-    gap: 0.5rem;
+.input_fi {
+  display: flex;
+  gap: 0.5rem;
 
-    margin-top: 1.25rem;
-
+  margin-top: 1.25rem;
 }
 #input-task {
   width: 367px;
@@ -162,6 +161,7 @@ body {
   display: block;
   text-align: center;
   color: white;
+  text-decoration: none;
 }
 .todo-item::after {
   content: "";
@@ -171,12 +171,13 @@ body {
   height: 0.5px;
   width: 100%;
   background-color: var(--color-background);
-}.todo-item:last-child::after{
-    display: none;
 }
-.todo-item:has(input:checked){
-    text-decoration: 2px line-through;
-    opacity: 0.6;
+.todo-item:last-child::after {
+  display: none;
+}
+.todo-item input[type="checkbox"]:checked + label {
+  text-decoration: 2px line-through;
+  opacity: 0.6;
 }
 .delete-button {
   position: absolute;
