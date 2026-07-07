@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h6 style="color: var(--color-muted-foreground);">WORKSPACE</h6>
+            <h1>Your tasks</h1>
+        </header>
+
+        <div class="dashboard">
+            <div class="dashboard-item" id="all">
+                <p class="dashboard-item-count">0</p>
+                <span class="dashboard-item-tag">All</span>
+            </div>   
+
+            <div class="dashboard-item" id="pending">
+                <p class="dashboard-item-count">0</p>
+                <span class="dashboard-item-tag">Pending</span>
+            </div>    
+
+            <div class="dashboard-item" id="completed">
+                <p class="dashboard-item-count">0</p>
+                <span class="dashboard-item-tag">Completed</span>
+            </div>    
+
+        </div>
+        <div class="input_fi">
+            <input id="input-task" type="text" placeholder="Add a new task...">
+            <button id="add-task">Add task</button>
+        </div>
+        <section class="todo-section">
+            <div class="section-filter">
+                <button class="filter-btn" id="filter-all">All</button>
+                <button class="filter-btn" id="filter-pending">Pending</button>
+                <button class="filter-btn" id="filter-completed">Completed</button>
+            </div>
+
+            <ul class="todo-list">
+                <li class="todo-item">
+                    <input id= "task1" type="radio" value="Task Completed">
+                    <label for="task1">
+                        Draft the upload.init endpoint spec
+                    </label>
+                    <button class="delete-button"><i class="fa-duotone fa-solid fa-trash"></i></button>
+                </li>
+                <li class="todo-item">
+                    <input id= "task1" type="radio" value="Task Completed">
+                    <label for="task1">
+                        Add HMAC verification to webhook route
+                    </label>
+                    <button class="delete-button"><i class="fa-duotone fa-solid fa-trash"></i></button>
+                </li>
+                <li class="todo-item">
+                    <input id= "task1" type="radio" value="Task Completed">
+                    <label for="task1">
+                        Write migration for upload_sessions table
+                    </label>
+                    <button class="delete-button"><i class="fa-duotone fa-solid fa-trash"></i></i></button>
+                </li>
+                <li class="todo-item">
+                    <input id= "task1" type="radio" value="Task Completed">
+                    <label for="task1">
+                        Steal the moon
+                    </label>
+                    <button class="delete-button"><i class="fa-duotone fa-solid fa-trash"></i></button>
+                </li>
+                <li class="todo-item">
+                    <input id= "task1" type="radio" value="Task Completed">
+                    <label for="task1">
+                        Scaffold the Hono upload service
+                    </label>
+                    <button class="delete-button"><i class="fa-duotone fa-solid fa-trash"></i></button>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script src="todo.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
