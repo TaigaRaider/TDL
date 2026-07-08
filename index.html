@@ -12,11 +12,9 @@
   </head>
   <body>
     <div id="app">
-      <header>
-        <h6 style="color: var(--color-muted-foreground)">WORKSPACE</h6>
-        <h1 style="color: var(--color-foreground); margin-top: 0">
-          Your tasks
-        </h1>
+      <header> 
+        <h6>WORKSPACE</h6>
+        <h1>Your tasks</h1>
         <button class="theme-toggle" id="theme-toggle">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -49,51 +47,7 @@
           <button class="filter-btn" id="filter-completed">Completed</button>
         </div>
 
-        <ul class="todo-list">
-          <li class="todo-item">
-            <input id="task1" type="checkbox" value="Task Completed" />
-            <label for="task1" id="task1-label">
-              Draft the upload.init endpoint spec
-            </label>
-            <button class="delete-button">
-              <i class="fa-duotone fa-solid fa-trash"></i>
-            </button>
-          </li>
-          <li class="todo-item">
-            <input id="task2" type="checkbox" value="Task Completed" />
-            <label for="task2" id="task2-label">
-              Add HMAC verification to webhook route
-            </label>
-            <button class="delete-button">
-              <i class="fa-duotone fa-solid fa-trash"></i>
-            </button>
-          </li>
-          <li class="todo-item">
-            <input id="task3" type="checkbox" value="Task Completed" />
-            <label for="task3" id="task3-label">
-              Write migration for upload_sessions table
-            </label>
-            <button class="delete-button">
-              <i class="fa-duotone fa-solid fa-trash"></i>
-            </button>
-          </li>
-          <li class="todo-item">
-            <input id="task4" type="checkbox" value="Task Completed" />
-            <label for="task4" id="task4-label"> Steal the moon </label>
-            <button class="delete-button">
-              <i class="fa-duotone fa-solid fa-trash"></i>
-            </button>
-          </li>
-          <li class="todo-item">
-            <input checked id="task5" type="checkbox" value="Task Completed" />
-            <label for="task5" id="task5-label">
-              Scaffold the Hono upload service
-            </label>
-            <button class="delete-button">
-              <i class="fa-duotone fa-solid fa-trash"></i>
-            </button>
-          </li>
-        </ul>
+        <ul class="todo-list"></ul>
       </section>
     </div>
 

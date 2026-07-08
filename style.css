@@ -16,7 +16,6 @@
 }
 
 [data-theme="dark"] {
-    --color-background: #0f0f13;
     --color-foreground: #e2e2ea;
     --color-primary: #818cf8;
     --color-primary-foreground: #1e1e2a;
@@ -47,9 +46,17 @@
 html {
     font-size: 16px;
 }
-
+header h6{
+  color: var(--color-muted-foreground); 
+  margin-bottom: 5px
+}
+header h1{
+  color: var(--color-foreground); 
+  margin-top: 0; 
+  display:inline-block;
+}
 body {
-    background-color: var(--color-background);
+    background: url(imgs/bac4.png);
     font-family: var(--font-sans);
     display: flex;
     align-items: center;
@@ -57,7 +64,10 @@ body {
     padding: 1rem;
     transition: background-color 0.3s ease;
 }
-
+[data-theme= "dark"] body{
+    background: url(imgs/bac6.jpg);
+    background-size: cover;
+}
 #app {
     width: 100%;
     max-width: 500px;
@@ -80,6 +90,7 @@ body {
     color: var(--color-foreground);
     font-size: 1rem;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    float: right;
 }
 
 [data-theme="dark"] #theme-toggle {
@@ -231,6 +242,27 @@ body {
 
 [data-theme="dark"] .todo-list {
     box-shadow: 5px 5px 15px var(--surface-shadow), var(--glow-primary);
+}
+
+.no-tasks {
+    text-align: center;
+    padding: 2.5rem 0;
+    color: var(--color-muted-foreground);
+    font-style: italic;
+}
+
+.no-tasks i {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.5;
+    display: block;
+}
+
+.no-tasks pre {
+    font-family: var(--font-sans);
+    font-style: italic;
+    color: var(--color-muted-foreground);
+    white-space: pre-wrap;
 }
 
 .todo-item {

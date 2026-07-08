@@ -1,3 +1,12 @@
+function canAddTask() {
+    const activeFilter = document.querySelector(".active");
+    if (activeFilter && activeFilter.id === "filter-completed") {
+        alert("Cannot add a new task to the completed section.");
+        return false;
+    }
+    return true;
+}
+
 function updateDashboard() {
     const items = document.querySelectorAll(".todo-item");
     const pending = document.querySelectorAll(".todo-item input[type='checkbox']:not(:checked)");
@@ -8,11 +17,6 @@ function updateDashboard() {
     document.querySelector("#completed .dashboard-item-count").textContent = completed.length;
 }
 
-function moveCompletedToEnd() {
-    const todoList = document.querySelector(".todo-list");
-    const completed = todoList.querySelectorAll(".todo-item input[type='checkbox']:checked");
-    completed.forEach(cb => todoList.appendChild(cb.closest(".todo-item")));
-}
 function filterTasks(filter) {
     document.querySelectorAll(".todo-item").forEach(item => {
         const checked = item.querySelector("input[type='checkbox']").checked;
@@ -23,10 +27,12 @@ function filterTasks(filter) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("add-task").addEventListener("click", AddTodo);
+    document.getElementById("add-task").addEventListener("click", e =>{
+        if (canAddTask()) AddTodo();
+    });
 
     document.getElementById("input-task").addEventListener("keypress", e => {
-        if (e.key === "Enter") AddTodo();
+        if (e.key === "Enter" && canAddTask()) AddTodo();
     });
 
     document.querySelector(".todo-list").addEventListener("click", e => {
@@ -34,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.querySelector(".todo-list").addEventListener("change", () => {
-        moveCompletedToEnd();
         updateDashboard();
     });
 
@@ -47,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateDashboard();
+    UpdateList();
     filterTasks("all");
     document.getElementById("filter-all").classList.add("active");
 
