@@ -95,6 +95,8 @@ body {
   width: 93px;
   height: 2rem;
   background-color: rgb(187, 1, 187);
+  color: white;
+  font-weight: 600;
   border: none;
   border-radius: 7px;
   cursor: pointer;
@@ -114,8 +116,9 @@ body {
   color: gray;
   border: none;
   border-radius: 3px;
-  transition: 300ms ease-out;
+  transition: 200ms ease-out;
 }
+.filter-btn.active,
 .filter-btn:focus {
   background-color: #c4b5fd;
   color: #6d28d9;

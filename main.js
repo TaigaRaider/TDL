@@ -30,10 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector(".todo-list").addEventListener("change", updateDashboard);
 
-    document.getElementById("filter-all").addEventListener("click", () => filterTasks("all"));
-    document.getElementById("filter-pending").addEventListener("click", () => filterTasks("pending"));
-    document.getElementById("filter-completed").addEventListener("click", () => filterTasks("completed"));
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            filterTasks(btn.id.replace("filter-", ""));
+        });
+    });
 
     updateDashboard();
     filterTasks("all");
+    document.getElementById("filter-all").classList.add("active");
+
 });
