@@ -8,6 +8,11 @@ function updateDashboard() {
     document.querySelector("#completed .dashboard-item-count").textContent = completed.length;
 }
 
+function moveCompletedToEnd() {
+    const todoList = document.querySelector(".todo-list");
+    const completed = todoList.querySelectorAll(".todo-item input[type='checkbox']:checked");
+    completed.forEach(cb => todoList.appendChild(cb.closest(".todo-item")));
+}
 function filterTasks(filter) {
     document.querySelectorAll(".todo-item").forEach(item => {
         const checked = item.querySelector("input[type='checkbox']").checked;
@@ -28,7 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.closest(".delete-button")) DeleteTodo(e);
     });
 
-    document.querySelector(".todo-list").addEventListener("change", updateDashboard);
+    document.querySelector(".todo-list").addEventListener("change", () => {
+        moveCompletedToEnd();
+        updateDashboard();
+    });
 
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", () => {
