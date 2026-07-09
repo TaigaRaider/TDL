@@ -114,6 +114,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     gap: 1px;
     transition: box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 [data-theme="dark"] #all {
